@@ -26,8 +26,8 @@ else:
     #1 arg so set that as amount of times
     try:
         #checks to see that they entered a number value for the script argument
-        run_times = int(sys.argv[2])
-    except:
+        run_times = int(sys.argv[1])
+    except ValueError:
         print("ERROR: INVALID ARGUMENT")
 
 
