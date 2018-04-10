@@ -46,7 +46,7 @@ url = "https://docs.google.com/forms/d/e/1FAIpQLSfr6mGjw9nZDxC_qc_AFyO80OesbUPDt
 driver.get(url)
 
 # Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
-start = time()
+#start = time() - used for timing things if you want to see how long it takes
 for n in range(run_times):
    
     #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
@@ -56,15 +56,12 @@ for n in range(run_times):
  
     #I think this is faster than clicking the submit again, and don't have to worry about misclicks
     driver.get(url) 
-    """
-    #This is so it accidentally doesn't click on the wrong thing.
-    sleep(.1)
+    
+#end = time()
+#print(end - start)
 
-    #click the submit again button
-    driver.find_element_by_css_selector("a").click()
-    """
-end = time()
-print(end - start)
+#closes the window in the end
+driver.close()
 sys.exit()
 
     

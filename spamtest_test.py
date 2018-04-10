@@ -13,8 +13,6 @@ from time import sleep
 #for arguments when calling the script
 import sys, os
 
-
-
 #checking if the user inputted system arguments, if they didn't then make it an infinite loop. 
 if(len(sys.argv) == 1):
     #means they didn't enter a value for argument. You can yell or default. I think i'm going to just make it infite if no args.
@@ -53,19 +51,17 @@ for n in range(run_times):
     driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[3]/div/div/div/content/span").click()
  
     #This is so it accidentally doesn't click on the wrong thing.
-    """
+    
     sleep(.1)
 
     #click the submit again button
-    driver.find_element_by_css_selector("a").click()
-    """
+    driver.get(url)
 
 
-
-
+driver.close()
 sys.exit()
 
-#
+
 
 
 
