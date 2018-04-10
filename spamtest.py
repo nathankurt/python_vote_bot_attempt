@@ -37,7 +37,7 @@ path = os.path.abspath("chromedriver.exe")
 
 driver = webdriver.Chrome(path) 
 #We open the correct webpage. Equivelant to pasting the url into the omnibox and pressing enter.
-driver.get("https://docs.google.com/forms/d/e/1FAIpQLSexgwjLLgUSYUMQmZhArCNsbBiVTc7FMoXYIbUIMpmMAH8jdg/viewform")
+driver.get("https://docs.google.com/forms/d/e/1FAIpQLSfr6mGjw9nZDxC_qc_AFyO80OesbUPDt_5VVS7tmCMrT7Wv8w/viewform")
 
 # Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
 for n in range(run_times):
