@@ -22,16 +22,12 @@ you can chmod +x the script and run with `./spamtest.py "number of votes"` but t
 
 looks like Reloading The page back to the start is faster than clicking the "submit again button"
 
-When method with reloading time is alone time for 20 is: `16.47681474685669`
+When method with reloading back to start is used time to vote 20 times is: `16.47681474685669`
 
-When Method with realoading time is first time for 20 is: `14.862403631210327`
-
-When Method with reloading time is second time for 20 is: `14.325935363769531`
+When method with reloading back to start is used time to vote 100 times is: `84.64760231971741`
 
 
+When method with clicking submit, then submit another response, is used time for 20 votes is: `18.313595056533813`
 
-When method with clicking time is alone, time for 20 is: `18.313595056533813`
+When method with clicking submit, then submit another response, is used time for 100 votes is: `112.92843914031982`
 
-When Method with clicking time is first, time for 20 is: `17.434386253356934`
-
-When Method with clicking time is second time for 20 is: `17.580833911895752`
