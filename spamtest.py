@@ -9,6 +9,7 @@ from selenium import webdriver
 #Creates a driver that we use to control the browser. This line is where you see the chrome window open
 
 from time import sleep
+from time import time
 
 #I think this is for sleep stuff
 import sys, os
@@ -38,11 +39,14 @@ path = os.path.abspath("chromedriver.exe")
 
 driver = webdriver.Chrome(path) 
 
+#Change this to whatever url you want
 url = "https://docs.google.com/forms/d/e/1FAIpQLSfr6mGjw9nZDxC_qc_AFyO80OesbUPDt_5VVS7tmCMrT7Wv8w/viewform"
+
 #We open the correct webpage. Equivelant to pasting the url into the omnibox and pressing enter.
 driver.get(url)
 
 # Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
+start = time()
 for n in range(run_times):
    
     #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
@@ -50,11 +54,19 @@ for n in range(run_times):
     #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
     driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[3]/div/div/div/content/span").click()
  
+    #I think this is faster than clicking the submit again, and don't have to worry about misclicks
+    driver.get(url) 
+    """
     #This is so it accidentally doesn't click on the wrong thing.
     sleep(.1)
 
     #click the submit again button
     driver.find_element_by_css_selector("a").click()
+    """
+end = time()
+print(end - start)
+sys.exit()
 
+    
 
 
