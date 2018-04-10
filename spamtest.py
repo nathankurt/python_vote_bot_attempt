@@ -42,28 +42,64 @@ driver = webdriver.Chrome(path)
 url = "https://docs.google.com/forms/d/e/1FAIpQLSfr6mGjw9nZDxC_qc_AFyO80OesbUPDt_5VVS7tmCMrT7Wv8w/viewform"
 
 #We open the correct webpage. Equivelant to pasting the url into the omnibox and pressing enter.
-driver.get(url)
 
-# Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
+
+def method1():
+    driver.get(url)
+    # Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
+    #start = time()
+    for n in range(run_times):
+    
+        #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
+        driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[2]/div/div[2]/div/content/div/label[6]/div/div/div[3]/div").click()
+        #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
+        driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[3]/div/div/div/content/span").click()
+    
+        #I think this is faster than clicking the submit again, and don't have to worry about misclicks
+        driver.get(url) 
+        """
+        #This is so it accidentally doesn't click on the wrong thing.
+        sleep(.1)
+
+        #click the submit again button
+        driver.find_element_by_css_selector("a").click()
+        """
+    driver.close()
+
+def method2():
+
+        driver.get(url)
+        # Use a generator like suggested here to do a while loop in a for loop. "https://stackoverflow.com/questions/34253996/infinite-for-loops-possible-in-python"
+        #start = time()
+        for n in range(run_times):
+    
+            #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
+            driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[2]/div/div[2]/div/content/div/label[6]/div/div/div[3]/div").click()
+            #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
+            driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[3]/div/div/div/content/span").click()
+        
+            #I think this is faster than clicking the submit again, and don't have to worry about misclicks
+            #driver.get(url) 
+            
+            #This is so it accidentally doesn't click on the wrong thing.
+            sleep(.1)
+
+            #click the submit again button
+            driver.find_element_by_css_selector("a").click()
+
+        driver.close()
+        return start
+    
+
 start = time()
-for n in range(run_times):
-   
-    #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
-    driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[2]/div/div[2]/div/content/div/label[6]/div/div/div[3]/div").click()
-    #Here we can use the standard way of clicking, since the actual vote button itself is clickable. We locate the vote button by xpath and click it.
-    driver.find_element_by_xpath("//form[@id='mG61Hd']/div/div[2]/div[3]/div/div/div/content/span").click()
- 
-    #I think this is faster than clicking the submit again, and don't have to worry about misclicks
-    driver.get(url) 
-    """
-    #This is so it accidentally doesn't click on the wrong thing.
-    sleep(.1)
-
-    #click the submit again button
-    driver.find_element_by_css_selector("a").click()
-    """
+method1()
 end = time()
-print(end - start)
+print("Method With Reloading Time: ", end - start)
+
+#start = time()
+#method2()
+#end = time()
+#print("Method With constant clicking Time: ", end - start)
 sys.exit()
 
     
