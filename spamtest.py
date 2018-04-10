@@ -38,6 +38,7 @@ else:
 path = os.path.abspath("chromedriver.exe")
 
 driver = webdriver.Chrome(path) 
+
 #Change this to whatever url you want
 url = "https://docs.google.com/forms/d/e/1FAIpQLSfr6mGjw9nZDxC_qc_AFyO80OesbUPDt_5VVS7tmCMrT7Wv8w/viewform"
 
