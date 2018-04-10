@@ -64,7 +64,7 @@ def method1():
         #click the submit again button
         driver.find_element_by_css_selector("a").click()
         """
-    driver.close()
+    #driver.close()
 
 def method2():
 
@@ -87,8 +87,7 @@ def method2():
             #click the submit again button
             driver.find_element_by_css_selector("a").click()
 
-        driver.close()
-        return start
+        #driver.close()
     
 
 start = time()
@@ -96,12 +95,22 @@ method1()
 end = time()
 print("Method With Reloading Time: ", end - start)
 
-#start = time()
-#method2()
-#end = time()
-#print("Method With constant clicking Time: ", end - start)
-sys.exit()
 
+start2 = time()
+method2()
+end2 = time()
+print("Method With constant clicking Time: ", end2 - start2)
+
+sys.exit()
+#looks like Reloading time is faster
+
+#When method with reloading time is alone time for 20 is: 16.47681474685669
+#When Method with realoading time is first time for 20 is: 14.862403631210327
+#When Method with reloading time is second time for 20 is: 14.325935363769531
+
+#When method with clicking time is alone, time for 20 is: 18.313595056533813
+#When Method with clicking time is first, time for 20 is: 17.434386253356934
+#Wehn Method with clicking time is second time for 20 is: 17.580833911895752
     
 
 
