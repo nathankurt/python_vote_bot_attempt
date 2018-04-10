@@ -10,6 +10,7 @@ from selenium import webdriver
 
 from time import sleep
 
+#I think this is for sleep stuff
 import sys, os
 
 
