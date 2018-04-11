@@ -59,7 +59,7 @@ for n in range(run_times):
     
 #end = time()
 #print(end - start)
-
+#just for testing stuff
 #closes the window in the end
 driver.close()
 sys.exit()
