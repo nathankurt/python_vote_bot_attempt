@@ -63,7 +63,3 @@ for n in range(run_times):
 #closes the window in the end
 driver.close()
 sys.exit()
-
-    
-
-
