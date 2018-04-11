@@ -2,7 +2,8 @@
 
 I tried to make a vote bot for google forms that would click on something as many times as possible
 
-This was just made for selecting the 6th thing in a list of multiple choice options on a google form.
+This was just made for selecting the 6th thing in a list of multiple choice options on a google form. I made this mainly to figure out how selenium works and try a bunch of neat stuff with gpg keys and random aliases on git
+
 Quick and dirty just doing it for a friend. You'll also need chromewebdriver in the same directory which you cnan get here: https://chromedriver.storage.googleapis.com/index.html?path=2.37/
 
 
